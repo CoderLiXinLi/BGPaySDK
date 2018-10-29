@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'BGPaySDK_Example' do
+  pod 'BGPaySDK', :path => '../'
+
+  target 'BGPaySDK_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
