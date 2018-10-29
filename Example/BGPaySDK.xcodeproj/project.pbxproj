@@ -39,12 +39,12 @@
 		607FACE51AFB9204008FA782 /* BGPaySDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BGPaySDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		8052AAC95F887E5FCBB118B9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		8052AAC95F887E5FCBB118B9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8BD09F9E159E9856F7FF1678 /* Pods_BGPaySDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGPaySDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95AF6C33F889E71B30B22CB7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		95AF6C33F889E71B30B22CB7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		AC6EE3CF43A2A711DF5A5B22 /* Pods-BGPaySDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGPaySDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BGPaySDK_Tests/Pods-BGPaySDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B662ADF8167E4C2E319B5325 /* Pods_BGPaySDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGPaySDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8E3FC94453768C110A1D0F5 /* BGPaySDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = BGPaySDK.podspec; path = ../BGPaySDK.podspec; sourceTree = "<group>"; };
+		B8E3FC94453768C110A1D0F5 /* BGPaySDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BGPaySDK.podspec; path = ../BGPaySDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CB815B9DB4B8F142D2BC50B0 /* Pods-BGPaySDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGPaySDK_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BGPaySDK_Example/Pods-BGPaySDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DE65434BAE83155F317CCB57 /* Pods-BGPaySDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGPaySDK_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-BGPaySDK_Example/Pods-BGPaySDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -266,17 +266,15 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BGPaySDK_Example/Pods-BGPaySDK_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BGPaySDK/BGPaySDK.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BGPaySDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -288,15 +286,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BGPaySDK_Tests-checkManifestLockResult.txt",
 			);
@@ -310,15 +304,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BGPaySDK_Example-checkManifestLockResult.txt",
 			);

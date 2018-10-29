@@ -1,5 +1,5 @@
 import XCTest
-import BGPaySDK
+import BGPay
 
 class Tests: XCTestCase {
     

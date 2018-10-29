@@ -1,0 +1,6 @@
+framework module BGPaySDK {
+  umbrella header "BGPaySDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

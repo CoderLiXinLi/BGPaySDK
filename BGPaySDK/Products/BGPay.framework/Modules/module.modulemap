@@ -1,0 +1,11 @@
+framework module BGPay {
+  umbrella header "BGPay.h"
+
+  export *
+  module * { export * }
+}
+
+module BGPay.Swift {
+    header "BGPay-Swift.h"
+    requires objc
+}
