@@ -86,8 +86,13 @@ class ViewController: UIViewController {
         withDraw.totalFee =  totalFee
         
         BGPay.shared().BGWithDraw(order: withDraw) { (result, error) in
-            print(result)
-            print(error?.errorMessage ?? "")
+            if error == nil {
+                print(result)
+                print(error?.errorMessage ?? "")
+            }else {
+                print(result)
+                print(error?.errorMessage ?? "")
+            }
         }
     }
     
@@ -110,8 +115,13 @@ class ViewController: UIViewController {
         order.notifyUrl = notifyUrl
         
         BGPay.shared().payOrder(order: order, scheme: "OtherApp") { (result, error) in
-            print(result)
-            print(error?.errorMessage ?? "")
+            if error == nil {
+                print(result)
+                print(error?.errorMessage ?? "")
+            }else {
+                print(result)
+                print(error?.errorMessage ?? "")
+            }
         }
     }
     
@@ -119,7 +129,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "三方调起BG"
-        
     }
     
     func randomNumber(from range: Range<Int>) -> Int {

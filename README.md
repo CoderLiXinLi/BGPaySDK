@@ -9,7 +9,65 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+```ruby
+    import BGPay
+
+    let appId = "123456789"
+    let mchId = "123456789"
+    let nonceStr = "58685768576309403"
+    let outTradeNo = "test123"
+    let totalFee = "2.3456"
+    let notifyUrl = "www.baidu.com"
+
+    let order = BGPayOrder()
+    order.appId = appId
+    order.mchId = mchId
+    order.nonceStr = nonceStr
+    order.outTradeNo = outTradeNo
+    order.totalFee =  totalFee
+    order.notifyUrl = notifyUrl
+
+    BGPay.shared().payOrder(order: order, scheme: "OtherApp") { (result, error) in
+        if error == nil {
+            print(result)
+            print(error?.errorMessage ?? "")
+        }else {
+            print(result)
+            print(error?.errorMessage ?? "")
+        }
+    }
+```
+```ruby
+
+    import BGPay
+    
+    let appId = "123456789"
+    let mchId = "123456789"
+    let nonceStr = "58685768576309403"
+    let outTradeNo = "test123"
+    let totalFee = "0.01"
+    let phone = "13315999725"
+    let countryCode = "+86"
+
+    let withDraw = BGWithDraw()
+    withDraw.appId = appId
+    withDraw.mchId = mchId
+    withDraw.nonceStr = nonceStr
+    withDraw.outTradeNo = outTradeNo
+    withDraw.phone = phone
+    withDraw.countryCode = countryCode
+    withDraw.totalFee =  totalFee
+
+    BGPay.shared().BGWithDraw(order: withDraw) { (result, error) in
+        if error == nil {
+            print(result)
+            print(error?.errorMessage ?? "")
+        }else {
+            print(result)
+            print(error?.errorMessage ?? "")
+        }
+    }
+```
 ### 支付结果查询
 
 **应用场景：** 
@@ -124,7 +182,7 @@ pod 'BGPaySDK'
 
 ## Author
 
-CoderLiXinLi, lilo7@sina.com
+CoderLiXinLi, lixinli0327@gmail.com
 
 ## License
 
