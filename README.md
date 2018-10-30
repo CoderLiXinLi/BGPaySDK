@@ -9,6 +9,8 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+**举例：** 
+### 下单
 ```ruby
     import BGPay
 
@@ -37,6 +39,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
         }
     }
 ```
+### 提现
 ```ruby
 
     import BGPay
