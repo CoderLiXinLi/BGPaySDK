@@ -22,7 +22,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpe
 ```
 #### URL Schemes
 ```ruby
-URL Schemes OtherApp
+URL Schemes "OtherApp"
 LSApplicationQueriesSchemes 白名单 添加 "BigoClient"
 ```
 
