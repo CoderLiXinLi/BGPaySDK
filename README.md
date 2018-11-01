@@ -9,6 +9,7 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+<<<<<<< HEAD
 *举例：*
 
 ### 配置
@@ -27,6 +28,8 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpe
 URL Schemes OtherApp
 LSApplicationQueriesSchemes 白名单 添加 "BigoClient"
 ```
+=======
+>>>>>>> 21d7a215d88ed935f027c777f0a2f6d3be4f6e15
 ### 下单
 ```ruby
     import BGPay
