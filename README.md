@@ -9,8 +9,6 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-*举例：*
-
 ### 配置
 #### 生命周期
 ```ruby
