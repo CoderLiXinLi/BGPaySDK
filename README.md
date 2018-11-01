@@ -10,6 +10,23 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 *举例：*
+
+### 配置
+#### 生命周期
+```ruby
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    if url.host == "BigoClient" {
+        //TODO:此处处理回调结果
+        print("此处处理回调结果")
+    }
+    return true
+}
+```
+#### URL Schemes
+```ruby
+URL Schemes OtherApp
+LSApplicationQueriesSchemes 白名单 添加 "BigoClient"
+```
 ### 下单
 ```ruby
     import BGPay

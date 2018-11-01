@@ -8,12 +8,13 @@
 
 import UIKit
 import Alamofire
+import CryptoSwift
 import BGPay
 
 class ViewController: UIViewController {
     
     @IBAction func getPayOrderClick(_ sender: UIButton) {
-        
+
         let appId = "123456789"
         let mchId = "123456789"
         let outTradeNo = "bg16354696"
