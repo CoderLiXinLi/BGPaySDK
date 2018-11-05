@@ -9,6 +9,10 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+### Swift versions support
+- Swift 4.1, version = 1.0.0 
+- Swift 4.2, version = 1.1.0
+
 ### 配置
 #### 生命周期
 ```ruby
