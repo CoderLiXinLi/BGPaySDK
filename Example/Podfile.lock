@@ -1,9 +1,9 @@
 PODS:
-  - Alamofire (4.7.1)
-  - BGPaySDK (1.0.0):
-    - Alamofire (= 4.7.1)
-    - CryptoSwift (= 0.9.0)
-  - CryptoSwift (0.9.0)
+  - Alamofire (4.7.3)
+  - BGPaySDK (1.1.0):
+    - Alamofire
+    - CryptoSwift
+  - CryptoSwift (0.13.0)
 
 DEPENDENCIES:
   - BGPaySDK (from `../`)
@@ -18,9 +18,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
-  BGPaySDK: aa0544a7ba00fa788ccf5df23bf0b844e309c42b
-  CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  BGPaySDK: 000c88d15e0ee3b713e82b38a4e4025fc68a3f74
+  CryptoSwift: 16e78bebf567bad1c87b2d58f6547f25b74c31aa
 
 PODFILE CHECKSUM: 2dc1b0132fc8f99affef2068e8481857be6e2d23
 
