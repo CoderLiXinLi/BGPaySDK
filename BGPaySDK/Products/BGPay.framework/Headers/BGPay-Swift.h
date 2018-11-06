@@ -182,31 +182,57 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 typedef SWIFT_ENUM(NSInteger, BGErrCode) {
+/// NOTE:未知错误
   BGErrCodeBGErrUnknownError = 1000,
+/// NOTE:未安装BG客户端
   BGErrCodeBGErrBgNotInstalled = 1001,
+/// NOTE:用户账号被禁用    请联系客服
   BGErrCodeBGErrDisableAccount = 2011,
+/// NOTE:资金密码错误    请输入正确的支付密码
   BGErrCodeBGErrPasswordError = 2012,
+/// NOTE:应用ID不能为空    请输入正确的appId
   BGErrCodeBGErrInvalidAppId = 2065,
+/// NOTE:商户号不能为空    请输入正确的商户号
   BGErrCodeBGErrInvalidMchId = 2066,
+/// NOTE:商户订单号不能为空    请输入正确的商户订单号
   BGErrCodeBGErrInvalidOutTradeNo = 2067,
+/// NOTE:平台未注册    请商户前往申请此接口权限
   BGErrCodeBGErrInvalidAccount = 2068,
+/// NOTE:商户号不匹配    请商户查看商户号是否正确
   BGErrCodeBGErrUnknownMchId = 2069,
+/// NOTE:平台已禁用    请商户前往申请接触禁用
   BGErrCodeBGErrDisableMch = 2070,
+/// NOTE:预支付订单号不存在    请输入正确的预支付订单号
   BGErrCodeBGErrUnknownPrepayId = 2073,
+/// NOTE:待支付    待支付
   BGErrCodeBGErrUnPay = 2077,
+/// NOTE:支付超时    支付超时
   BGErrCodeBGErrPayTimeOut = 2078,
+/// NOTE:已支付完成    订单支付已完成
   BGErrCodeBGErrPaid = 2079,
+/// NOTE:签名错误    请检查生成的签名
   BGErrCodeBGErrUnknownSign = 2080,
+/// NOTE:用户不存在    用户未注册
   BGErrCodeBGErrNonExistUser = 2018,
+/// NOTE:提现记录审核存在    提现记录已存在请联系客服审核
   BGErrCodeBGErrWithdrawRecord = 3001,
+/// NOTE:提现金额需要大于0    提现金额需要大于0
   BGErrCodeBGErrUnknownFee = 3002,
+/// NOTE:appId匹配错误    请检查appId
   BGErrCodeBGErrUnknownAppId = 3003,
+/// NOTE:商户号匹配错误    请检查商户号
   BGErrCodeBGErrUnknownMchId2 = 3004,
+/// NOTE:商户已经禁用提现    商户已经禁用提现
   BGErrCodeBGErrDisableWithdraw = 3005,
+/// NOTE:提现记录不存在    请查看生成提现记录接口
   BGErrCodeBGErrNoWithdrawRecord = 3006,
+/// NOTE:提现记录审核失败    等待平台审核提现记录
   BGErrCodeBGErrWithdrawRecordFailed = 3007,
+/// NOTE:提现记录审核失败    提现记录审核失败
   BGErrCodeBGErrWithdrawFailed = 3008,
+/// NOTE: 资金不足    请充值
   BGErrCodeBGErrNoMoney = 50027,
+/// NOTE:用户尚未完成高级实名认证    请用户完成实名认证
   BGErrCodeBGErrNotAuthUser = 2000000,
 };
 
@@ -226,17 +252,18 @@ SWIFT_CLASS("_TtC5BGPay5BGPay")
 /// 处理钱包或者独立快捷app支付跳回商户app携带的支付结果Url
 /// @param resultUrl        支付结果url
 /// @param completionBlock  支付结果回调
-- (void)BGWithDrawWithOrder:(BGWithDraw * _Nonnull)item callback:(void (^ _Nonnull)(NSString * _Nonnull, BGPayError * _Nullable))callback;
+- (void)withDrawWithOrder:(BGWithDraw * _Nonnull)item successCallback:(void (^ _Nonnull)(NSString * _Nonnull))successCallback failedCallback:(void (^ _Nonnull)(NSString * _Nonnull, BGPayError * _Nullable))failedCallback;
 @end
 
 @class BGPayOrder;
 
 @interface BGPay (SWIFT_EXTENSION(BGPay))
+- (void)setDebug;
 /// 支付接口
 /// @param order      订单模型
 /// @param schemeStr      调用支付的app注册在info.plist中的scheme
 /// @param completionBlock 支付结果回调Block
-- (void)payOrderWithOrder:(BGPayOrder * _Nonnull)item scheme:(NSString * _Nonnull)formsScheme callback:(void (^ _Nonnull)(NSString * _Nonnull, BGPayError * _Nullable))callback;
+- (void)payOrderWithOrder:(BGPayOrder * _Nonnull)item scheme:(NSString * _Nonnull)formsScheme successCallback:(void (^ _Nonnull)(NSString * _Nonnull))successCallback failedCallback:(void (^ _Nonnull)(NSString * _Nonnull, BGPayError * _Nullable))failedCallback;
 @end
 
 

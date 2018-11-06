@@ -49,14 +49,10 @@ LSApplicationQueriesSchemes 白名单 添加 "BigoClient"
     order.totalFee =  totalFee
     order.notifyUrl = notifyUrl
 
-    BGPay.shared().payOrder(order: order, scheme: "OtherApp") { (result, error) in
-        if error == nil {
-            print(result)
-            print(error?.errorMessage ?? "")
-        }else {
-            print(result)
-            print(error?.errorMessage ?? "")
-        }
+    BGPay.shared().payOrder(order: order, scheme: "OtherApp",successCallback: { (result) in
+        print(result)
+    }) { (result, error) in
+        print(error?.errorMessage ?? "")
     }
 ```
 ### 提现
@@ -81,14 +77,10 @@ LSApplicationQueriesSchemes 白名单 添加 "BigoClient"
     withDraw.countryCode = countryCode
     withDraw.totalFee =  totalFee
 
-    BGPay.shared().BGWithDraw(order: withDraw) { (result, error) in
-        if error == nil {
-            print(result)
-            print(error?.errorMessage ?? "")
-        }else {
-            print(result)
-            print(error?.errorMessage ?? "")
-        }
+    BGPay.shared().withDraw(order: withDraw, successCallback: { (result) in
+        print(result)
+    }) { (result, error) in
+        print(error?.errorMessage ?? "")
     }
 ```
 ### 支付结果查询

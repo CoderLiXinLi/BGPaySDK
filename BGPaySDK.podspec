@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
 
-  s.vendored_framework = 'BGPay/Products/BGPay.framework'
+  s.vendored_framework = 'BGPaySDK/Products/BGPay.framework'
   
   # s.resource_bundles = {
   #   'BGPaySDK' => ['BGPaySDK/Assets/*.png']

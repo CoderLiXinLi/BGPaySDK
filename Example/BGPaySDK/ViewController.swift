@@ -14,7 +14,7 @@ import BGPay
 class ViewController: UIViewController {
     
     @IBAction func getPayOrderClick(_ sender: UIButton) {
-
+        
         let appId = "123456789"
         let mchId = "123456789"
         let outTradeNo = "bg16354696"
@@ -86,14 +86,10 @@ class ViewController: UIViewController {
         withDraw.countryCode = countryCode
         withDraw.totalFee =  totalFee
         
-        BGPay.shared().BGWithDraw(order: withDraw) { (result, error) in
-            if error == nil {
-                print(result)
-                print(error?.errorMessage ?? "")
-            }else {
-                print(result)
-                print(error?.errorMessage ?? "")
-            }
+        BGPay.shared().withDraw(order: withDraw, successCallback: { (result) in
+            print(result)
+        }) { (result, error) in
+            print(error?.errorMessage ?? "")
         }
     }
     
@@ -115,14 +111,10 @@ class ViewController: UIViewController {
         order.totalFee =  totalFee
         order.notifyUrl = notifyUrl
         
-        BGPay.shared().payOrder(order: order, scheme: "OtherApp") { (result, error) in
-            if error == nil {
-                print(result)
-                print(error?.errorMessage ?? "")
-            }else {
-                print(result)
-                print(error?.errorMessage ?? "")
-            }
+        BGPay.shared().payOrder(order: order, scheme: "OtherApp", successCallback: { (result) in
+            print(result)
+        }) { (result, error) in
+            print(error?.errorMessage ?? "")
         }
     }
     
@@ -130,6 +122,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "三方调起BG"
+        
+//       BGPay.shared().setDebug()
     }
     
     func randomNumber(from range: Range<Int>) -> Int {
@@ -138,4 +132,5 @@ class ViewController: UIViewController {
         return range.lowerBound + Int(rnd)
     }
 }
+
 
